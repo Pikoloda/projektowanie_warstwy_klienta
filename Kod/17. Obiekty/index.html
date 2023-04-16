@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Obiekty</title>
+    <script>
+
+        /*pierwszy sposób tworzenia obietków*/
+
+        let person = {
+          firstName: 'Jan',
+          lastName: 'Kowalski',
+          introduce: function (){
+            console.log('Nazywam się ' + this.firstName + ' ' + this.lastName);
+          },
+        }
+
+        person.introduce();
+        person.firstName = 'Adam';
+        person.introduce();
+
+
+        /*drugi sposób tworzenia obietków*/
+
+        function Car(brand1, model) {
+          this.brand = brand1 + '<---';
+          this.model = model;
+
+          this.showDetails = function () {
+            console.log('Car: ' + this.brand + ' ' + this.model);
+          }
+        }
+
+        let fiat = new Car('Fiat', '126p')
+        fiat.showDetails()
+
+
+        /*trzeci sposób tworzenia obiektów*/
+
+        class House{
+          constructor(windows, doors) {
+            this.windows = windows;
+            this.doors =doors;
+          }
+
+          showDetails() {
+            console.log('Dom ma: ' + this.windows + ' okien ' + this.doors + ' drzwi.')
+          }
+        }
+
+        let house = new House(5, 2);
+        house.showDetails()
+
+
+
+
+    </script>
+
+</head>
+<body>
+
+</body>
+</html>
